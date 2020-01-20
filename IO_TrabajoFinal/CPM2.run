@@ -1,0 +1,20 @@
+reset;
+model ../IO_TrabajoFinal/CPM2.mod; # Relative path from AMPL to .mod and .dat archives
+data ../IO_TrabajoFinal/CPM2.dat;
+solve;
+
+printf "\n\Time: -------------------------------------- \n";
+for {i in Activities} {
+  printf "Activity %d starts at: %d\n", i, x[i];
+}
+printf "===> Minimum completion time for the project: %d\n\n", Total_Time;
+
+
+printf "\n\Crushes: -------------------------------------- \n";
+for {i in Activities} {
+  printf "Activity %d crushes: %d time unit\n", i, c[i];
+}
+printf "Total cost of the activities: %f\n", Activity_Cost;
+printf "Cost of directioning the project: %f\n", Project_Directioning_Cost;
+printf "Cost of interest of the loan: %f\n", Interest_Cost;
+printf "===> Total monetary cost: %f\n", Total_Cost;

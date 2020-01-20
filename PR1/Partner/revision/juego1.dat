@@ -1,0 +1,26 @@
+set Kompanies := K0 K1 K2;
+set Periods := P0 P1 P2;
+
+param Bundle_price :=
+K0 72947
+K1 470631
+K2 854927
+;
+
+param Bundle_minutes: K0 K1 K2 :=
+P0 42 56 64
+P1 42 99 84
+P2 78 77 13
+;
+
+param Period_price :=
+P0 0.04067369732333814
+P1 1.4309955623200288
+P2 1.2145677510765052
+;
+
+param Period_minutes :=
+P0 214
+P1 59
+P2 292
+;

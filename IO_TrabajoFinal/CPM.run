@@ -1,0 +1,13 @@
+reset;
+model ../IO_TrabajoFinal/CPM.mod; # Relative path from AMPL to .mod and .dat archives
+data ../IO_TrabajoFinal/CPM.dat;
+solve;
+
+printf "\n\Time: -------------------------------------- \n";
+for {i in Activities} {
+  printf "Activity %d starts at: %d\n", i, x[i];
+}
+
+for {final in Final_Activity} {
+  printf "===> Minimum completion time for the project: %d\n\n", x[final];
+}

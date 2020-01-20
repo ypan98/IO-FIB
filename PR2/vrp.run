@@ -1,0 +1,32 @@
+
+option solver gurobi;
+model ../PR2/vrp.mod
+data ../PR2/vrp.dat
+
+# dist(i,i) = 0
+for {i in NODES} {
+  let dist[i,i] := 0;
+}
+
+# calculate costs based on formula given in the image
+for {(i,j) in ARCS} {
+  let dist[i,j] := 35+(I[i]-2*J[i])^2+(I[j]-J[j])^2;
+}
+
+# increase congestion arcs cost by 175%
+for {(i,j) in A_ARCS} {
+  let dist[i,j] := dist[i,j]*1.75;
+}
+
+# Floyd-Warshall to calculate minimun distance between pair of nodes
+for {a in NODES} {	# a = k
+  for {i in NODES} {
+    for {j in NODES} {
+      if dist[i,a] + dist[a,j] < dist[i,j] then {
+		let dist[i,j] := dist[i,a] + dist[a,j];
+		}
+    }
+  }
+}
+
+solve;

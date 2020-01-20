@@ -1,0 +1,22 @@
+set Kompanies := K1, K2, K3;
+set Periods := P1, P2, P3;
+
+param Bundle_price :=  
+K1 400
+K2 500
+K3 600;
+
+param Bundle_minutes: K1 K2 K3 :=
+				P1 60 30 40
+				P2 60 40 50
+				P3 60 50 60;
+
+param Period_price := 
+P1 4.3
+P2 2.5
+P3 3.8;
+
+param Period_minutes :=
+P1 240
+P2 180
+P3 240;

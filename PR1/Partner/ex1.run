@@ -1,0 +1,7 @@
+option solver gurobi;
+model television_network.mod;
+data ex1.dat;
+solve;
+display choose_bundle;
+display minutes_period;
+display revenue;

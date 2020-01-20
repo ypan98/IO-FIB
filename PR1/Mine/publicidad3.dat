@@ -1,0 +1,36 @@
+set AUDIENCIA:= A1, A2, A3;
+set MEDIO_PUBLI:= M1, M2, M3;
+
+set AUD_MED:=
+(A1, M1)
+(A1, M2)
+(A1, M3)
+
+(A2, M1)
+(A2, M2)
+(A2, M3)
+
+(A3, M1)
+(A3, M2)
+(A3, M3)
+;
+
+param exposicion:=
+A1 348
+A2 592
+A3 916
+;
+
+param efectividad:=
+A1 M1 0.12
+A1 M2 0.26
+A1 M3 0.53
+
+A2 M1 0.54
+A2 M2 0.91
+A2 M3 0.48
+
+A3 M1 0.28
+A3 M2 0.70
+A3 M3 0.56
+;

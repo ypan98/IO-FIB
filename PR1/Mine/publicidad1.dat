@@ -1,0 +1,61 @@
+set AUDIENCIA:= A1, A2, A3, A4;
+set MEDIO_PUBLI:= M1, M2, M3, M4, M5;
+
+set AUD_MED:=
+(A1, M1)
+(A1, M2)
+(A1, M3)
+(A1, M4)
+(A1, M5)
+
+(A2, M1)
+(A2, M2)
+(A2, M3)
+(A2, M4)
+(A2, M5)
+
+(A3, M1)
+(A3, M2)
+(A3, M3)
+(A3, M4)
+(A3, M5)
+
+(A4, M1)
+(A4, M2)
+(A4, M3)
+(A4, M4)
+(A4, M5)
+;
+
+param exposicion:=
+A1 0
+A2 50
+A3 0
+A4 100
+;
+
+param efectividad:=
+A1 M1 0.5
+A1 M2 0.5
+A1 M3 0.5
+A1 M4 0.5
+A1 M5 0.5
+
+A2 M1 0.5
+A2 M2 0.5
+A2 M3 0.5
+A2 M4 0.5
+A2 M5 0.5
+
+A3 M1 0.5
+A3 M2 0.5
+A3 M3 0.5
+A3 M4 0.5
+A3 M5 0.5
+
+A4 M1 0.5
+A4 M2 0.5
+A4 M3 0.5
+A4 M4 0.5
+A4 M5 0.5
+;
